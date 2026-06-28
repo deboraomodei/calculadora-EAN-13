@@ -20,11 +20,18 @@ function calcularEAN13(codigo) {
 
 function calcular() {
   let codigo = document.getElementById("campo").value;
+
+  if (codigo.length !== 12 || isNaN(codigo)) {
+    document.getElementById("resultado").innerHTML = "Código inválido";
+    return;
+  }
+
   let digito = calcularEAN13(codigo);
   document.getElementById("resultado").innerHTML = 
     "Dígito verificador: " + digito + 
     "<br>Código completo: " + codigo + digito;
 }
+
 document.getElementById("campo").addEventListener("keypress", function(e) {
   if (e.key === "Enter") {
     calcular();
