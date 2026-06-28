@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Dígito verificador</title>
+    <link rel="icon" type="image/ico" href="logo.ico">
     <style>
       * {
         box-sizing: border-box;
@@ -25,12 +26,6 @@
         width: 100%;
         max-width: 400px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      }
-
-      h1 {
-        font-size: 22px;
-        color: #222;
-        margin-bottom: 24px;
       }
 
       input {
@@ -73,8 +68,7 @@
   <body>
     <div class="container">
 
-
-      <input type="text" id="campo" placeholder="Leia ou digite o código de barras">
+      <input type="text" id="campo" placeholder="Digite os 12 dígitos">
       <button onclick="calcular()">Calcular</button>
 
       <p id="resultado"></p>
