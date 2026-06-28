@@ -2,16 +2,84 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8">
-    <title>Calculadora EAN-13</title>
+    <title>Dígito verificador</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        padding: 60px 20px;
+      }
+
+      .container {
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 32px;
+        width: 100%;
+        max-width: 400px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+
+      h1 {
+        font-size: 22px;
+        color: #222;
+        margin-bottom: 24px;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px 14px;
+        margin-bottom: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 15px;
+        outline: none;
+      }
+
+      input:focus {
+        border-color: #888;
+      }
+
+      button {
+        width: 100%;
+        padding: 11px;
+        background-color: #222;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #444;
+      }
+
+      #resultado {
+        margin-top: 20px;
+        font-size: 15px;
+        color: #333;
+        line-height: 1.8;
+      }
+    </style>
   </head>
   <body>
+    <div class="container">
 
-    <h1>Calculadora EAN-13</h1>
 
-    <input type="text" id="campo" placeholder="Digite os 12 dígitos">
-    <button onclick="calcular()">Calcular</button>
+      <input type="text" id="campo" placeholder="Leia ou digite o código de barras">
+      <button onclick="calcular()">Calcular</button>
 
-    <p id="resultado"></p>
+      <p id="resultado"></p>
+
+    </div>
 
     <script src="ean13.js"></script>
   </body>
