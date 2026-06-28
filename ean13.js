@@ -25,3 +25,8 @@ function calcular() {
     "Dígito verificador: " + digito + 
     "<br>Código completo: " + codigo + digito;
 }
+document.getElementById("campo").addEventListener("keypress", function(e) {
+  if (e.key === "Enter") {
+    calcular();
+  }
+});
