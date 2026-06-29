@@ -22,10 +22,13 @@
       .container {
         background-color: #ffffff;
         border-radius: 12px;
-        padding: 32px;
+        padding: 50px;
         width: 100%;
-        max-width: 400px;
+        max-width: 600px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+
+        
       }
 
       input {
@@ -63,6 +66,30 @@
         color: #333;
         line-height: 1.8;
       }
+      instrucoes {
+  margin-top: 32px;
+  border-top: 1px solid #eee;
+  padding-top: 24px;
+}
+
+.instrucoes h3 {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.instrucoes ol {
+  padding-left: 20px;
+}
+
+.instrucoes li {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
 
       img {
   width: 80px;
@@ -84,6 +111,18 @@
       <button onclick="calcular()">Calcular</button>
 
       <p id="resultado"></p>
+
+      <div class="instrucoes">
+    <h3>Como usar</h3>
+    <ol>
+      <li>Aponte o leitor para o código de barras</li>
+      <li>O leitor vai preencher o campo automaticamente</li>
+      <li>Pressione <strong>Enter</strong> ou clique em <strong>Calcular</strong></li>
+
+    </ol>
+  </div>
+
+</div>
 
     </div>
 
