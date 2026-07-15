@@ -21,15 +21,29 @@ function calcularEAN13(codigo) {
 function calcular() {
   let codigo = document.getElementById("campo").value;
 
-  if (codigo.length !== 12 || isNaN(codigo)) {
+  if (codigo.length !== 13) {
     document.getElementById("resultado").innerHTML = "Código inválido";
     return;
   }
 
-  let digito = calcularEAN13(codigo);
-  document.getElementById("resultado").innerHTML = 
-    "Dígito verificador: " + digito + 
-    "<br>Código completo: " + codigo + digito;
+  if (isNaN(codigo)) {
+    document.getElementById("resultado").innerHTML = "Código inválido";
+    return;
+  }
+
+  let doze = codigo.substring(0, 12);
+  let digitoCalculado = calcularEAN13(doze);
+  let digitoLido = parseInt(codigo[12]);
+
+  if (digitoCalculado === digitoLido) {
+    document.getElementById("resultado").innerHTML =
+      "✅ Código válido!" +
+      "<br>Dígito verificador: " + digitoCalculado;
+  } else {
+    document.getElementById("resultado").innerHTML =
+      "❌ Código inválido!" +
+      "<br>Dígito verificador correto: " + digitoCalculado;
+  }
 }
 
 document.getElementById("campo").addEventListener("keypress", function(e) {
